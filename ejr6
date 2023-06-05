@@ -1,0 +1,38 @@
+//En una carrera de autos se ingresan el número de auto y su tiempo, indicar e imprimir cuál ganó y cúal fue el último.
+// (lo resolví con chatgpt por no lograr la sintaxis para hacerlo correr)
+
+int numeroAuto;
+double tiempo;
+int autoGanador = 0;
+int autoUltimo = 0;
+double menorTiempo = double.MaxValue;
+double mayorTiempo = double.MinValue;
+
+Console.WriteLine("Ingrese el número de auto y su tiempo (ingrese número de auto igual a 0 para finalizar):");
+
+while (true)
+{
+    Console.Write("Número de auto: ");
+    numeroAuto = Convert.ToInt32(Console.ReadLine());
+
+    if (numeroAuto == 0)
+        break;
+
+    Console.Write("Tiempo: ");
+    tiempo = Convert.ToDouble(Console.ReadLine());
+
+    if (tiempo < menorTiempo)
+    {
+        menorTiempo = tiempo;
+        autoGanador = numeroAuto;
+    }
+
+    if (tiempo > mayorTiempo)
+    {
+        mayorTiempo = tiempo;
+        autoUltimo = numeroAuto;
+    }
+}
+
+Console.WriteLine("El auto ganador es el número: " + autoGanador);
+Console.WriteLine("El último auto es el número: " + autoUltimo);
