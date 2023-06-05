@@ -1,0 +1,31 @@
+//Ingresar facturas hasta nro de factura = 0, sumar sus importes y cuantas superan los $1000. imprimir los resultados
+
+float sumaFacturas = 0;
+int cantFacturas1000 = 0;
+int cantFacturas10000 = 0;
+int cantFacturas4y7 = 0;
+
+Console.WriteLine("ingresar factura: ");
+int facturas = int.Parse(Console.ReadLine());
+
+while (facturas != 0)
+{
+    sumaFacturas += facturas;
+
+    if (facturas >= 1000 && facturas < 10000)
+    {
+        cantFacturas1000++;
+    }
+    if (facturas >= 10000)
+    {
+        cantFacturas10000++;
+    }
+    if(facturas >= 400 && facturas <= 700)
+    {
+        cantFacturas4y7++;
+    }
+    Console.WriteLine("ingresar factura: ");
+    facturas = int.Parse(Console.ReadLine());
+}
+
+Console.WriteLine("Suma de facturas: " + sumaFacturas + ", facturas que superan los 1000: " + cantFacturas1000 + ", facturas que superan 10000: " + cantFacturas10000 + ", facturas entre 400 y 700: " + cantFacturas4y7);
