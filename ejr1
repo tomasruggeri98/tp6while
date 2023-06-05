@@ -1,0 +1,20 @@
+// Ingresar N sueldos e indicar su suma y su promedio, imprimir resultados
+
+int repeticiones = 0;
+float sumaSueldos = 0;
+int cantSueldos = 0;
+
+Console.WriteLine("ingresar sueldos");
+int sueldo = int.Parse(Console.ReadLine());
+
+while (sueldo != 0)
+{
+    sumaSueldos += sueldo;
+    cantSueldos++;
+
+    Console.WriteLine("ingresar sueldos:");
+    sueldo = int.Parse(Console.ReadLine());    
+}
+
+float promedio = sumaSueldos / cantSueldos;
+Console.WriteLine("suma: " + sumaSueldos + "promedio: " +  promedio);
