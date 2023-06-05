@@ -1,0 +1,41 @@
+//Ingresar N valores, calcular e imprimir el promedio de positivos, de negativos y cantidad de ceros
+
+Console.Write("Ingrese la cantidad de números a calcular: ");
+int cantidadNum = int.Parse(Console.ReadLine());
+
+int sumaPositivos = 0;
+int sumaNegativos = 0;
+int cantidadCeros = 0;
+int contador = 0;
+
+while (contador < cantidadNum)
+{
+    Console.Write("Ingrese un número: ");
+    int numero = int.Parse(Console.ReadLine());
+
+    if (numero == 0)
+    {
+        cantidadCeros++;
+    }
+    if (numero > 0)
+    {
+        sumaPositivos += numero;
+    }
+    else if (numero < 0)
+    {
+        sumaNegativos += numero;
+    }
+
+    contador++;
+}
+
+double promedioPositivos = 0;
+double promedioNegativos = 0;
+
+if (cantidadNum > 0)
+{
+    promedioPositivos = (double)sumaPositivos / cantidadNum;
+    promedioNegativos = (double)sumaNegativos / cantidadNum;
+}
+
+Console.WriteLine("Promedio de positivos: " + promedioPositivos + ", promedio de negativos: " + promedioNegativos + ", cantidad de ceros: " + cantidadCeros);
