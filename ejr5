@@ -1,0 +1,24 @@
+//Ingresar temperaturas hasta una temperatura igual a 1000, indicar e imprmir la mayor y menor
+
+int temperatura;
+int mayor = 0;
+int menor = 0;
+
+Console.WriteLine("Ingrese las temperaturas (ingrese 1000 para finalizar):");
+
+while (true)
+{
+    Console.Write("Temperatura: ");
+    temperatura = int.Parse(Console.ReadLine());
+
+    if (temperatura == 1000)
+        break;
+
+    if (temperatura > mayor)
+        mayor = temperatura;
+
+    if (temperatura < menor)
+        menor = temperatura;
+}
+Console.WriteLine("La temperatura mayor es: " + mayor);
+Console.WriteLine("La temperatura menor es: " + menor);
